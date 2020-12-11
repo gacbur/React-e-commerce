@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.page-container{
+  position: relative;
   min-height: 100vh;
+}
+
+.content-wrap{
+    padding-bottom: 2em;
+}
+
+nav{
+    padding:0 4em;
+    background-color: lightslategrey;
+}
+
+nav ul{
+  width:100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav li{
+    list-style: none;
+    padding:1em;
+}
+
+nav li:hover{
+    background-color: rgb(130, 148, 167);
+}
+
+nav a{
+    padding:1em 0em;
+    text-decoration: none;
+    color:white;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  width:100%;
+  height: 100%;
+}
+
+.main-content{
+  display: flex;
+  justify-content: center;
+  margin:5em;
+  width:75%;
+  height: auto;
+}
+
+.product{
+  margin:1em;
+  padding:1em;
+  min-width: 400px;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.product button{
+  display: block;
+  width:25%;
+  margin:20px auto;
+}
+
+.product p,h3,h4,h5{
+  margin:.5em;
+}
+
+.cart{
+  margin:1em;
+  padding:1em;
+}
+
+.cart button{
+  display: block;
+  width:25%;
+  margin-left: auto;
+}
+
+.cart-product{
+  margin:1em;
+  padding:1em;
+  min-width: 400px;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.admin-panel{
+  max-width: 700px;
+  min-width: 700px;
+  border-radius: 8px;
+  padding: 1em;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.admin-panel form{
+  padding:1em;
+}
+
+.admin-panel .form-control{
+    padding:.4em;
+}
+
+.manage-products{
   display: flex;
   flex-direction: column;
+}
+
+.manage-products div{
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: .1em 0em;
+  flex-grow: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.manage-products .product-el:first-child{
+  border-top: 1px solid darkgray;
+  border-bottom: 1px solid darkgray;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.manage-products .product-el + .product-el{
+  border-bottom: 1px solid darkgray;
+}
+
+.prod-description{
+  padding:.4em;
+  min-width: 280px;
+  max-width:280px;
+  max-height: 250px;
+}
+
+.footer{
+  position: absolute;
+  bottom:0;
+  width:100%;
+  height: 2.5em;
+  background-color: lightslategrey;
 }
