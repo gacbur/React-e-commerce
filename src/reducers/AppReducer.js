@@ -22,7 +22,26 @@ export const AppReducer = (state, action) => {
             return {
                 ...state,
                 products: [...state.products.filter(item => item.id !== action.payload)]
-
+            }
+        case actionType.SET_EDIT_PRODUCT:
+            return {
+                ...state,
+                products: [...state.products.map(item => {
+                    if (item.id === action.payload) {
+                        return {
+                            ...item, isEdited: !item.isEdited
+                        }
+                    } else {
+                        return item
+                    }
+                })]
+            }
+        case actionType.ADD_EDITED_PRODUCT:
+            return {
+                ...state,
+                products: [...state.products.map(item => (
+                    item.id === action.payload.id ? action.payload.newEditedItem : item
+                ))]
             }
         default:
             return state;

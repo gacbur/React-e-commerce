@@ -2,29 +2,39 @@ import React, { createContext, useReducer } from 'react'
 
 import { AppReducer } from '../reducers/AppReducer'
 
+import uuid from 'react-uuid'
+
 import * as actionType from '../actions/actionTypes'
 
-import uuid from 'react-uuid'
+import computer from '../images/computer.jpg'
+import laptop from '../images/laptop.jpg'
+import smartphone from '../images/smartphone.jpg'
 
 const initialState = {
     products: [
         {
             id: uuid(),
             name: "Laptop",
+            image: laptop,
             price: 4500,
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis nisi animi rem laborum laudantium iure blanditiis quasi facere dolore exercitationem!'
+            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis nisi animi rem laborum laudantium iure blanditiis quasi facere dolore exercitationem!',
+            isEdited: false
         },
         {
             id: uuid(),
             name: "Computer",
+            image: computer,
             price: 3000,
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis nisi animi rem laborum laudantium iure blanditiis quasi facere dolore exercitationem!'
+            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis nisi animi rem laborum laudantium iure blanditiis quasi facere dolore exercitationem!',
+            isEdited: false
         },
         {
             id: uuid(),
             name: "Smartphone",
+            image: smartphone,
             price: 600,
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis nisi animi rem laborum laudantium iure blanditiis quasi facere dolore exercitationem!'
+            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis nisi animi rem laborum laudantium iure blanditiis quasi facere dolore exercitationem!',
+            isEdited: false
         }
     ],
     cart: []
@@ -61,6 +71,21 @@ export const GlobalContextProvider = (props) => {
         })
     }
 
+    const handleProductIsEdited = (id) => {
+        dispatch({
+            type: actionType.SET_EDIT_PRODUCT, payload: id
+        })
+    }
+
+    const handleAddEditedProduct = (newEditedItem, id) => {
+        dispatch({
+            type: actionType.ADD_EDITED_PRODUCT,
+            payload: {
+                newEditedItem: newEditedItem,
+                id: id
+            }
+        })
+    }
 
     return (
         <GlobalContext.Provider value={{
@@ -69,7 +94,9 @@ export const GlobalContextProvider = (props) => {
             handleAddToCart,
             handleRemoveFromCart,
             handleAddToProducts,
-            handleDeleteProduct
+            handleDeleteProduct,
+            handleProductIsEdited,
+            handleAddEditedProduct
         }}>
             {props.children}
         </GlobalContext.Provider>

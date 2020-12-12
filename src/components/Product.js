@@ -7,10 +7,15 @@ const Product = ({ product }) => {
 
     return (
         <div className="product">
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            <h4>Price: {product.price}$</h4>
-            <button onClick={() => handleAddToCart(product)}>Add to cart</button>
+            <div className="product-image-container">
+                <img src={product.image} alt={`${product.name}`} />
+            </div>
+            <div className="product-content">
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <h4>Price: {product.price}$</h4>
+                <button onClick={() => handleAddToCart(product)}>Add to cart</button>
+            </div>
         </div>
     )
 };

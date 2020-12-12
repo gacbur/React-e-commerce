@@ -66,6 +66,43 @@ main{
 }
 
 .product button{
+  cursor: pointer;
+  border:none;
+  color:white;
+  padding:1em 1em;
+  background-color: rgb(80, 71, 138);
+}
+
+.cart button{
+  cursor: pointer;
+  border:none;
+  color:white;
+  padding:1em 0em;
+  min-width:150px;
+  background-color: rgb(80, 71, 138);
+  transition: .2s;
+}
+
+.cart button:hover{
+  background-color: rgb(221, 90, 90);
+  transition: .2s;
+}
+
+.product button:hover{
+  background-color: rgb(98, 91, 139);
+}
+.product-image-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image-container img{
+  width: 45%;
+}
+
+.product button{
   display: block;
   width:25%;
   margin:20px auto;
@@ -87,6 +124,7 @@ main{
 }
 
 .cart-product{
+  display: flex;
   margin:1em;
   padding:1em;
   min-width: 400px;
@@ -94,6 +132,19 @@ main{
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.cart-product-img-container img{
+  width: 200px;
+}
+
+.cart-product-img-container{
+  padding-left:.5em;
+  border-right: 2px solid #8294a7;
+}
+
+.cart-product-content{
+  padding-left:.5em;
 }
 
 .admin-panel{
@@ -115,12 +166,12 @@ main{
 
 .manage-products{
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
 .manage-products div{
   display: flex;
-  align-items: center;
   margin: .1em 0em;
   flex-grow: 1;
 }
@@ -138,7 +189,60 @@ main{
   padding:.4em;
   min-width: 280px;
   max-width:280px;
+  min-height: 50px;
   max-height: 250px;
+}
+
+.prod-url{
+  padding: .4em;
+  min-width: 550px;
+  max-width:550px;
+  min-height: 50px;
+  max-height: 150px;
+}
+
+/* EDITING PANEL */
+
+.editing-panel{
+  width:95%;
+  padding:1em 1em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: none;
+  background-color: lightgray;
+}
+
+.editing-panel p{
+  text-align: left;
+}
+
+.product-el-buttons{
+  display: flex;
+  align-items: center;
+  border-top: 1px solid darkgray;
+  border-bottom: 1px solid darkgray;
+}
+.editing-cancel-btn{
+  cursor: pointer;
+  width:fit-content;
+  font-size: 22px;
+  border:none;
+  background-color: lightgray;
+  color:rgb(211, 67, 67);
+  margin-left:auto;
+}
+
+.editing-cancel-btn:hover{
+  color:rgb(247, 40, 40);
+} 
+
+.editing-panel form{
+  padding:1em 0em;
+}
+
+.editing-panel .form-control{
+  padding: .4em 0em;
 }
 
 .footer{

@@ -7,10 +7,15 @@ const CartProduct = ({ cartProduct }) => {
 
     return (
         <div className="cart-product">
-            <h3>{cartProduct.name}</h3>
-            <p>{cartProduct.description}</p>
-            <h4>Price: {cartProduct.price}$</h4>
-            <button onClick={() => handleRemoveFromCart(cartProduct.id, cartProduct)}>Remove from cart</button>
+            <div className="cart-product-img-container">
+                <img src={cartProduct.image} alt={`${cartProduct.name}`}></img>
+            </div>
+            <div className="cart-product-content">
+                <h3>{cartProduct.name}</h3>
+                <p>{cartProduct.description}</p>
+                <h4>Price: {cartProduct.price}$</h4>
+                <button onClick={() => handleRemoveFromCart(cartProduct.id, cartProduct)}>Remove from cart</button>
+            </div>
         </div>
     );
 }
