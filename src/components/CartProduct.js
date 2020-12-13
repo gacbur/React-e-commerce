@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalContext'
 
+
+
 const CartProduct = ({ cartProduct }) => {
 
     const { handleRemoveFromCart } = useContext(GlobalContext)
@@ -8,7 +10,7 @@ const CartProduct = ({ cartProduct }) => {
     return (
         <div className="cart-product">
             <div className="cart-product-img-container">
-                <img src={cartProduct.image} alt={`${cartProduct.name}`}></img>
+                <img src={cartProduct.image[0]} alt={`${cartProduct.name}`}></img>
             </div>
             <div className="cart-product-content">
                 <h3>{cartProduct.name}</h3>
